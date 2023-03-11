@@ -104,7 +104,7 @@ img{
 }
 .accordion_item_input:hover ~ .accordion_item_content{
     display: flex;
-    height: auto;
+    height: 450px;
     visibility: visible;
     opacity: 1;
     align-items: center;
@@ -123,119 +123,4 @@ img{
     transform: rotate(45deg);
     transition: all 0.5s;
 }
-
-
-
-
-
-/* body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-*,
-*:before,
-*:after {
-    box-sizing: border-box;
-}
-img{
-    width: 60%;
-    height: auto;
-    
-}
-.wrapper{
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.accordion {
-    color: blue;
-}
-.accordion:hover{
-    color: black;
-}
-
-.accordion_item{
-    height: 66.5px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    transition: height 0.5s ease-in-out;
-    
-}
-.accordion_item:hover{
-    height: 400px;
-}
-
-.accordion_item_input{
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-}
-.accordion_item_triger{
-    display: block;
-    position: relative;
-    padding: 20px;
-    border: 1px solid black;
-    text-decoration: solid;
-    font-family:Arial Black;
-    cursor: pointer;    
-}
-.accordion_item_triger::after{
-    content: ""; 
-    display: block;
-    position: absolute; 
-    width: 24px; 
-    height: 4px; 
-    background: gray;
-    transform: rotate(90deg);
-    top: 50%;
-    right: 15px;
-    transition: all 0.5s;
-}
-.accordion_item_triger::before {
-    content: ""; 
-    display: block;
-    position: absolute; 
-    top: 50%;
-    right: 15px;
-    width: 24px; 
-    height: 4px; 
-    background: gray;
-    transform: rotate(-0deg);
-    transition: all 0.5s;
-}
-.accordion_item_content{
-    margin: 0 auto;
-    height: 100%;
-    padding: 20px;
-    border: 1px solid black;
-    border-top: none;
-    transition: 1s;
-}
-
-
-.accordion_item_input:checked ~ .accordion_item_triger{
-    color: black;
-}
-
-.accordion_item_input:checked ~ .accordion_item_content{
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    transition: all ease-in-out .2s;  
-}
-.accordion_item_input:checked ~ .accordion_item_content{
-    height: 400px; 
-}
-.accordion_item_input:checked ~ .accordion_item_triger::before{
-    transform: rotate(-45deg);
-    transition: all 0.5s;
-}
-.accordion_item_input:checked ~ .accordion_item_triger::after{
-    transform: rotate(45deg);
-    transition: all 0.5s;
-} */
-
 
