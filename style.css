@@ -25,12 +25,6 @@ img{
 .accordion:hover{
     color: black;
 }
-.accordion:hover ~.accordion_item_triger::after{
-    display: none;
-}
-.accordion:hover ~.accordion_item_triger::before{
-    display: block;
-}
 .accordion_item{
     margin-bottom: 20px;
     
@@ -45,6 +39,7 @@ img{
     display: block;
     position: relative;
     padding: 20px;
+    height: 80px;
     border-top: 1px solid black;
     text-decoration: solid;
     font-family:Arial Black;
@@ -52,7 +47,8 @@ img{
 }
 .accordion_item_triger::after{
     content: ""; 
-    display: block;
+    opacity: 0;
+    visibility: hidden;
     position: absolute; 
     width: 24px; 
     height: 4px; 
@@ -64,7 +60,8 @@ img{
 }
 .accordion_item_triger::before {
     content: ""; 
-    display: block;
+    opacity: 0;
+    visibility: hidden;
     position: absolute; 
     top: 50%;
     right: 15px;
@@ -79,7 +76,7 @@ img{
     opacity: 0;
     visibility: hidden;
     -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -104,7 +101,7 @@ img{
 }
 .accordion_item_input:hover ~ .accordion_item_content{
     display: flex;
-    height: 450px;
+    height: 400px;
     visibility: visible;
     opacity: 1;
     align-items: center;
@@ -112,15 +109,40 @@ img{
     transition: all 0.5s ease-in-out; 
     
 }
-.accordion_item:hover{
-    transition: 1s;
-}
 .accordion_item_input:checked ~ .accordion_item_triger::before{
+    /* visibility: visible;
+    opacity: 1; */
     transform: rotate(-45deg);
     transition: all 0.5s;
 }
 .accordion_item_input:checked ~ .accordion_item_triger::after{
+    /* visibility: visible;
+    opacity: 1; */
     transform: rotate(45deg);
     transition: all 0.5s;
 }
+.accordion:hover  .accordion_item_triger::before{
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.5s;
+}
+.accordion:hover  .accordion_item_triger::after{
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.5s;
+}
+.accordion_item_input:checked + .accordion:hover ~ .accordion_item_triger::before{
+    visibility: visible;
+    opacity: 1;
+    transform: rotate(-45deg);
+    transition: all 0.5s;
+}
+.accordion_item_input:checked + .accordion:hover ~ .accordion_item_triger::after{
+    visibility: visible;
+    opacity: 1;
+    transform: rotate(45deg);
+    transition: all 0.5s;
+}
+
+
 
