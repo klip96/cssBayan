@@ -1,0 +1,155 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+img{
+    width: 60%;
+    height: auto;
+    
+}
+.wrapper{
+    max-width: 62.5em;
+    margin: 0 auto;
+}
+
+.accordion {
+    color: blue;
+}
+.accordion:hover{
+    color: black;
+}
+.accordion_item{
+    margin-bottom: 1.25em;
+    
+}
+.accordion_item_input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+.accordion_item_triger{
+    display: block;
+    position: relative;
+    padding: 1.25em;
+    height: 5em;
+    border-top: 1px solid black;
+    text-decoration: solid;
+    font-family:Arial Black;
+    cursor: pointer;    
+}
+.accordion_item_triger::after{
+    content: ""; 
+    opacity: 0;
+    visibility: hidden;
+    position: absolute; 
+    width: 1.5em; 
+    height: 0.25em; 
+    background: gray;
+    transform: rotate(90deg);
+    top: 50%;
+    right: 15px;
+    transition: all 0.5s;
+}
+.accordion_item_triger::before {
+    content: ""; 
+    opacity: 0;
+    visibility: hidden;
+    position: absolute; 
+    top: 50%;
+    right: 0.9375em;
+    width: 1.5em; 
+    height: 0.25em; 
+    background: gray;
+    transform: rotate(-0deg);
+    transition: all 0.5s;
+}
+.accordion_item_content{
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.accordion_item_input:checked ~ .accordion_item_triger{
+    color: black
+}
+
+.accordion_item_input:checked ~ .accordion_item_content{
+    display: flex;
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+    align-items: center;
+    justify-content: center; 
+    transition: all 0.5s ease-in-out; 
+}
+.accordion_item_input:hover{
+    transition: all ease .2s;
+}
+.accordion_item_input:hover ~ .accordion_item_content{
+    display: flex;
+    height:  25em;
+    visibility: visible;
+    opacity: 1;
+    align-items: center;
+    justify-content: center; 
+    transition: all 0.5s ease-in-out; 
+    
+}
+.accordion_item_input:checked ~ .accordion_item_triger::before{
+    /* visibility: visible;
+    opacity: 1; */
+    transform: rotate(-45deg);
+    transition: all 0.5s;
+}
+.accordion_item_input:checked ~ .accordion_item_triger::after{
+    /* visibility: visible;
+    opacity: 1; */
+    transform: rotate(45deg);
+    transition: all 0.5s;
+}
+.accordion:hover  .accordion_item_triger::before{
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.5s;
+}
+.accordion:hover  .accordion_item_triger::after{
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.5s;
+}
+.accordion_item_input:checked + .accordion:hover ~ .accordion_item_triger::before{
+    visibility: visible;
+    opacity: 1;
+    transform: rotate(-45deg);
+    transition: all 0.5s;
+}
+.accordion_item_input:checked + .accordion:hover ~ .accordion_item_triger::after{
+    visibility: visible;
+    opacity: 1;
+    transform: rotate(45deg);
+    transition: all 0.5s;
+}
+@media (max-width: 820px) {
+    .accordion_item_triger a {
+        font-size: 1.8em;
+    }
+}
+@media (max-width: 560px) {
+    .accordion_item_triger a {
+        font-size: 1.6em;
+    }
+}
